@@ -15,7 +15,7 @@ services:
       dockerfile: Dockerfile.webhook
     container_name: github_webhook_listener1
     ports:
-      - "9006:9000"
+      - "9006:9001"
     volumes:
       - /docker/FastAPI:/docker/FastAPI
       - /var/run/docker.sock:/var/run/docker.sock
