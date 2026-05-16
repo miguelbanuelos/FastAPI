@@ -1,0 +1,28 @@
+services:
+  fastapi-api:
+    build: .            
+    container_name: fastapi-api
+    ports:
+      - "8053:8053"
+    env_file:
+      - .env
+    restart: unless-stopped
+    networks:
+      - shared_network
+  webhook-listener:
+    build:
+      context: .
+      dockerfile: Dockerfile.webhook
+    container_name: github_webhook_listener
+    ports:
+      - "9005:9000"
+    volumes:
+      - /docker/FastAPI:/docker/FastAPI
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: webhook -verbose -hooks=/docker/FastAPI/hooks.json -hotreload
+    restart: unless-stopped
+    networks:
+      - shared_network
+networks:
+  shared_network:
+    external: true
