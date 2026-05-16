@@ -13,7 +13,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.webhook
-    container_name: github_webhook_listener
+    container_name: github_webhook_listener1
     ports:
       - "9005:9000"
     volumes:
