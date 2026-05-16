@@ -1,6 +1,6 @@
 [
   {
-    "id": "redeploy-fastapi",
+    "id": "redeploy-fastapi-api",
     "execute-command": "/docker/FastAPI/deploy.sh",
     "command-working-directory": "/docker/FastAPI",
     "trigger-rule": {
