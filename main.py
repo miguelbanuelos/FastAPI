@@ -59,7 +59,7 @@ def ejecutar_query():
             cursor.execute(sql_script)
             resultados = cursor.fetchall()
             
-        return {"status": "success", "data": resultados}
+        return {"status": "success2", "data": resultados}
         
     except pymysql.MySQLError as e:
         raise HTTPException(status_code=500, detail=f"Error de base de datos: {str(e)}")
