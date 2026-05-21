@@ -29,6 +29,7 @@ pool = PooledDB(
     blocking=True,              # waitForConnections: true
     host=DB_HOST,
     user=DB_USER,
+    port=3306
     password=DB_PASSWORD,
     database=DB_NAME,
     client_flag=CLIENT.MULTI_STATEMENTS, # multipleStatements: true
